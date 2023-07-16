@@ -1,11 +1,14 @@
 import styles from "./Formulario.module.css";
+import useSelect from "./hooks/useSelect";
 
 const Formulario = () => {
+  const [categoria, SelectNoticia] = useSelect();
   return (
     <div>
       <div className={`${styles.buscador} row`}>
         <form className="col s12 m8 offset-m2">
           <h2 className={styles.heading}>Encuentra Noticias por Categoría</h2>
+          <SelectNoticia />
 
           <div className={`input-field col s12`}>
             <input
