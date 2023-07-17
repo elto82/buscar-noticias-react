@@ -11,13 +11,11 @@ const App = () => {
 
   useEffect(() => {
     const consultarApi = async () => {
-      const url = `https://newsapi.org/v2/top-headlines?country=co&category=${categoria}&apiKey=7ab9cdb44adc454a9b4955f016630e56`;
+      const url = `https://newsapi.org/v2/top-headlines?country=us&category=${categoria}&apiKey=7ab9cdb44adc454a9b4955f016630e56`;
 
-      const res = await fetch(url);
-      const resultado = await res.json();
-      console.log(resultado.articles);
+      const res = await axios(url);
       //console.log(res.data.articles);
-      setNoticias(resultado.articles);
+      setNoticias(res.data.articles);
     };
     consultarApi();
   }, [categoria]);
