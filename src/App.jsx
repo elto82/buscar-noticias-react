@@ -15,7 +15,7 @@ const App = () => {
 
       const res = await fetch(url);
       const resultado = await res.json();
-
+      console.log(resultado.articles);
       //console.log(res.data.articles);
       setNoticias(resultado.articles);
     };
